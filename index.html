@@ -13,28 +13,28 @@
 </head>
 <body role="document">
 <div id="headerBar"></div>
-  <div class="container theme-showcase" role="main">
+  <div class="container-fluid theme-showcase" role="main">
     <div class="page-header">
       <h2 id="header-title">LAX Go To Market Progress</h2>
       <img id="header-img" src="http://www.northhighland.com/-/media/Images/NH/Content/Logo/nh_share_logo.jpg" alt="NH Logo" style="height: 50px; width: 200px; float: right;">
     </div>
     <div class="row">
-      <div class="col-sm-4 col-sm-4-offset-4">
+      <div class="col-md-4 col-md-offset-2">
         <p class="inline" style="font-size: 16px; margin-bottom: 10px; margin-top: 10px">Above the Funnel Opportunities:</p>
         <span class="badge inline" style="font-size: 16px">24</span>
         <p>Pie chart here</p>
       </div>
-      <div class="col-sm-4 col-sm-4-offset-4">
+      <div class="col-md-4">
           <h4>Leaderboard:</h4>
           <ul class="list-group">
-            <li class="list-group-item active"><span class="badge">12</span>Person 1</li>
+            <li class="list-group-item active "><span class="badge">12</span>Person 1</li>
             <li class="list-group-item"><span class="badge">8</span>Person 2</li>
             <li class="list-group-item"><span class="badge">4</span>Person 3</li>
           </ul>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8 col-md-8-offset-2">
+      <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-primary">
           <div class="panel-heading">
             Short Cycle
@@ -44,7 +44,7 @@
           Dormant Accounts
           </h4>
             <form id="opportunityForm">
-            <table id="shortCycleTable" class="table" contenteditable="true">
+            <table id="shortCycleTable" class="table editable-table">
               <thead>
                 <tr>
                   <th>Account</th>
@@ -77,9 +77,9 @@
                     <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td>
                 </tr>
                 <!-- This is our cloneable table line -->
-                <tr id="formRow" class="editable">
+                <tr id="dormAcctsForm" class="editable formRow">
                   <td>
-                      <input type="text" id="account" placeholder="Account" class="form-control"/>
+                      <input type="text" id="account" placeholder="Account" class="form-control oppForm"/>
                       </td><td>
                       <input type="text" id="bdLeads" placeholder="BD Leads" class="form-control oppForm"/>
                       </td><td>
@@ -87,27 +87,27 @@
                       </td><td>
                       <input type="text" id="opportunity" placeholder="Opportunity Name" class="form-control oppForm"/>
                       </td><td>
-                      <select class="form-control oppForm" id="status">
+                      <select class="form-control oppForm inline" id="status">
                         <option>Target</option>
                         <option>In progress</option>
                         <option>Submitted</option>
                         <option>Won</option>
                         <option>Lost</option>
                       </select>
-                      <span class="glyphicon glyphicon-ok f_addOpp" id="addOpp"></span>
+                      <span class="glyphicon glyphicon-ok f_addOpp inline" id="addOpp"></span>
                       </td>
                 </tr>
               </tbody>
             </table>
             </form>
-            <span class="label label-primary" id="newItem">+</span>
+            <span class="label label-primary new-row-button" id="f_addNewRow">+</span>
           </div>
         </div>
       </div>
       </div>
       <div class="row">
 
-      <div class="col-md-8 col-md-8-offset-2">
+      <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
           <div class="panel-heading">
             Long Cycle
@@ -115,7 +115,7 @@
           <div class="panel-body">
           <h4> New Target Accounts</h4>
           <form id="longform">
-            <table class="table">
+            <table class="table editable-table">
               <thead>
                 <tr>
                   <th>Account</th>
@@ -126,44 +126,50 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>AEG</td>
-                  <td>Peter, Maureen</td>
-                  <td>01/01/16</td>
-                  <td>Opportunity XYZ</td>
-                  <td>In Progress</span></td>
+                <tr class="editable">
+                  <td class="editableField">AEG</td>
+                  <td class="editableField">Peter, Maureen</td>
+                  <td class="editableField">01/01/16</td>
+                  <td class="editableField">Opportunity XYZ</td>
+                  <td class="editableField">In Progress</span></td>
+                  <td class="rowControl">
+                    <span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span>
+                    <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td>
                 </tr>
-                <tr>
-                  <td>AT&amp;T</td>
-                  <td>Reyes, Peter</td>
-                  <td>07/15/16</td>
-                  <td>Agent Answer Center ROI</td>
-                  <td>Proposal Submitted</span></td>
+                <tr class="editable">
+                  <td class="editableField">AT&amp;T</td>
+                  <td class="editableField">Reyes, Peter</td>
+                  <td class="editableField">07/15/16</td>
+                  <td class="editableField">Agent Answer Center ROI</td>
+                  <td class="editableField">Proposal Submitted</span></td>
+                  <td class="rowControl">
+                    <span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span>
+                    <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td>
                 </tr>
-                <tr id="longFormRow">
+                <tr class="editable" id="newAcctsForm">
                   <td>
-                      <input type="text" id="longAccount" placeholder="Account" class="form-control"/>
+                      <input type="text" id="newAccount" placeholder="Account" class="form-control oppForm"/>
                       </td><td>
-                      <input type="text" id="longBdLeads" placeholder="BD Leads" class="form-control oppForm"/>
+                      <input type="text" id="newBdLeads" placeholder="BD Leads" class="form-control oppForm"/>
                       </td><td>
-                      <input type="text" id="longLastContact" placeholder="Date of Last Contact" class="form-control oppForm"/>
+                      <input type="text" id="newLastContact" placeholder="Date of Last Contact" class="form-control oppForm"/>
                       </td><td>
-                      <input type="text" id="longOpportunity" placeholder="Opportunity Name" class="form-control oppForm"/>
+                      <input type="text" id="newOpportunity" placeholder="Opportunity Name" class="form-control oppForm"/>
                       </td><td>
-                      <select class="form-control oppForm" id="longStatus">
+                      <select class="form-control oppForm inline" id="newStatus">
                         <option>Target</option>
                         <option>In progress</option>
                         <option>Submitted</option>
                         <option>Won</option>
                         <option>Lost</option>
                       </select>
-                      <span class="glyphicon glyphicon-ok" id="longadd"></span>
+                      <span class="glyphicon glyphicon-ok inline" id="f_dormAcctAdd"></span>
                       </td>
                 </tr>
               </tbody>
             </table>
             </form>
-            <span class="label label-default" id="newItem">+</span>
+            <span class="label label-default new-row-button" id="f_addNewAcctRow">+</span>
           </div>
         </div>
       </div>

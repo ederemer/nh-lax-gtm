@@ -2,13 +2,17 @@ h1, h2, h3, h4, p, div, td, body, head {
 	font-family: 'Open Sans', sans-serif;;
 }
 
-#newItem {
-  font-size: 14pt;
-  padding: 5px 10px 5px 10px;
+.new-row-button {
+  font-size: 12pt;
+  padding: 0px 6px 0px 6px;
 }
 
-#account, #bdLeads, #lastContact, #opportunity, #status {
+input[type=text] {
 	width: 100px;
+}
+
+.oppForm {
+	width: 100px	!important;
 }
 
 #status, #addOpp, #header-title, #header-img {
@@ -21,10 +25,16 @@ h1, h2, h3, h4, p, div, td, body, head {
 }
 
 .glyphicon-fade {
-	opacity: 0.3;
+	opacity: 0.1;
 	padding: 1px;
 }
 
 .inline {
-	display: inline-block;
+	display: inline-block !important;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.editable-table {
+	font-size: 10pt;
 }

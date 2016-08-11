@@ -15,15 +15,19 @@ $(document).ready(function() {
   }).disableSelection();
 
   // Hide elements
-  $('#formRow').hide();
-  $('.rowControl').hide();
+  $('#dormAcctsForm').hide();
+  $('#newAcctsForm').hide();
 
   //Show new Opportunity form/row
-  $('#newItem').on('click', function() {
-    $('#formRow').toggle();
+  $('#f_addNewRow').on('click', function() {
+      $('tr#dormAcctsForm').toggle();
   });
 
-  // Add new opporuntity row
+  $('#f_addNewAcctRow').on('click', function() {
+      $('tr#newAcctsForm').toggle();
+  });
+
+  // Add new opporuntity row (dormant accounts)
   $('#addOpp').on('click', function() {
     // Grab form values and create HTML
     var accountText = $('#account').val();
@@ -45,18 +49,33 @@ $(document).ready(function() {
     $('#formRow').hide();
   });
 
-  // Show and hide the row control table column
-  $('tr').hover(function() {
-    $(this).find('td.rowControl').stop(true, true).delay(200).show(0);
-    }, function() {
-    $(this).find('td.rowControl').stop(true, true).delay(1000).hide(0);
+  // Add new opporuntity row (new target accounts)
+  $('#f_dormAcctAdd').on('click', function() {
+    // Grab form values and create HTML
+    var accountText = $('#newAccount').val();
+    var bdLeadsText = $('#newBdLeads').val();
+    var lastContact = $('#newLastContact').val();
+    var oppNameText = $('#newOpportunity').val();
+    var statusText = $('#newStatus').val();
+    var newOppHTML = '<tr class="editable"><td class="editableField">' + accountText + '</td><td class="editableField">' + bdLeadsText + '</td><td class="editableField">' + lastContact + '</td><td class="editableField">' + oppNameText + '</td><td class="editableField"><span class="label label-default">' + statusText + '</span></td><td class="rowControl"><span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span><span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td></tr>';
+
+    //Add new table row to table before the
+    $('#newAcctsForm').before(newOppHTML);
+
+    //Clear and hide form
+    $('#newAccount').val('');
+    $('#newBdLeads').val('');
+    $('#newLastContact').val('');
+    $('#newOpportunity').val('');
+    $('#newStatus').val('');
+    $('#newAcctsForm').hide();
   });
 
   // Change transparency of trash glyph
   $('.glyphicon-fade').hover(function() {
     $(this).css('opacity', 1.0)
   }, function() {
-    $(this).css('opacity', 0.5)
+    $(this).css('opacity', 0.1)
   });
 
   // Delete row
