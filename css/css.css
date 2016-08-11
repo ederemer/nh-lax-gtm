@@ -1,0 +1,30 @@
+h1, h2, h3, h4, p, div, td, body, head {
+	font-family: 'Open Sans', sans-serif;;
+}
+
+#newItem {
+  font-size: 14pt;
+  padding: 5px 10px 5px 10px;
+}
+
+#account, #bdLeads, #lastContact, #opportunity, #status {
+	width: 100px;
+}
+
+#status, #addOpp, #header-title, #header-img {
+	display:inline-block;
+}
+
+#headerBar {
+    height: 20px;
+    background: #064193;
+}
+
+.glyphicon-fade {
+	opacity: 0.3;
+	padding: 1px;
+}
+
+.inline {
+	display: inline-block;
+}
