@@ -86,7 +86,6 @@ $(document).ready(function() {
       return false;
   });
 
-
   // Make row fields editable
   $('tbody').on('click', '.glyphicon-pencil', function(e) {
       $(e.target).parents('tr.editable').children('.editableField').map(function () {
@@ -108,5 +107,8 @@ $(document).ready(function() {
     
 
 });
+
+
+
   
 

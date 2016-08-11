@@ -38,3 +38,8 @@ input[type=text] {
 .editable-table {
 	font-size: 10pt;
 }
+
+#chart {
+	margin: auto;
+	display: block;
+}

@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
 <title>LAX Go to Market</title>
-<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="http://www.elliotderemer.com/wp-content/uploads/css.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.1/d3.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 </head>
 <body role="document">
@@ -23,8 +22,7 @@
       <div class="col-md-4 col-md-offset-2">
         <p class="inline" style="font-size: 16px; margin-bottom: 10px; margin-top: 10px">Above the Funnel Opportunities:</p>
         <span class="badge inline" style="font-size: 16px">24</span>
-        <div id="chart">
-        </div>
+        <p>Pie chart here</p>
       </div>
       <div class="col-md-4">
           <h4>Leaderboard:</h4>
@@ -177,52 +175,7 @@
       </div>
       </div>
       </div>
-  <script src="js/mindmup-editabletable.js"></script>    
-  <script src="js/app.js"></script>
-  <script>
-  (function(d3) {
-
-  // D3 donut chart experiment
-var dataset = [
-  { label: 'Late Stage', count: 2},
-  { label: 'Mid Stage', count: 12},
-  { label: 'Early Stage', count: 10},
-];
-
-var width = 120;
-var height = 120;
-var donutWidth = 30;
-var radius = Math.min(width,height) / 2;
-
-var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-var svg = d3.select('#chart')
-  .append('svg')
-  .attr('width', width)
-  .attr('height', height)
-  .attr('style', 'display: block; margin: auto')
-  .append('g')
-  .attr('transform', 'translate(' + (width/2) + ',' + (height/2) + ')');
-
-var arc = d3.arc()
-  .innerRadius(radius - donutWidth)
-  .outerRadius(radius);
-
-var pie = d3.pie()
-  .value(function(d) { return d.count; })
-  .sort(null);
-
-var path = svg.selectAll('path')
-  .data(pie(dataset))
-  .enter()
-  .append('path')
-  .attr('d', arc)
-  .attr('fill', function(d, i) {
-    return color(d.data.label);
-  });
-
-  })(window.d3);
-
-  </script>
+  <script src="http://www.elliotderemer.com/wp-content/uploads/js/mindmup-editabletable.js"></script>    
+  <script src="http://www.elliotderemer.com/wp-content/uploads/app.js"></script>
   </body>
   </html>
