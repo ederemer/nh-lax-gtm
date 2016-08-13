@@ -1,4 +1,17 @@
+
+var addRow = function () {
+  $('tr.formRow').find('input').map(function() {
+    var arr = [];
+    arr.push($(this).val());
+    console.log(arr);
+    // <tr class="editable"><td class="editableField">' + accountText + '</td><td class="editableField">' + bdLeadsText + '</td><td class="editableField">' + lastContact + '</td><td class="editableField">' + oppNameText + '</td><td class="editableField"><span class="label label-default">' + statusText + '</span></td><td class="rowControl"><span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span><span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td></tr>';
+  });
+};
+
 $(document).ready(function() {
+
+  // Testing
+  $('#test').on('click', addRow);
 
   // Make table sortable
   // Helper to make table not lose width
@@ -107,8 +120,6 @@ $(document).ready(function() {
     
 
 });
-
-
 
   
 
