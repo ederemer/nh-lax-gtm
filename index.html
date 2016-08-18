@@ -59,7 +59,7 @@
               </thead>
               <tbody>
                 <tr class="editable">
-                  <td class="editableField">AEG</td>
+                  <td class="editableField">Client 1</td>
                   <td class="editableField">Peter, Maureen</td>
                   <td class="editableField">01/01/16</td>
                   <td class="editableField">Opportunity XYZ</td>
@@ -69,10 +69,10 @@
                     <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td>
                 </tr>
                 <tr class="editable">
-                  <td class="editableField">AT&amp;T</td>
+                  <td class="editableField">Client 2</td>
                   <td class="editableField">Reyes, Peter</td>
                   <td class="editableField">07/15/16</td>
-                  <td class="editableField">Agent Answer Center ROI</td>
+                  <td class="editableField">Project ROI</td>
                   <td class="editableField">Proposal Submitted</td>
                   <td class="rowControl">
                     <span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span>
@@ -96,14 +96,13 @@
                         <option>Won</option>
                         <option>Lost</option>
                       </select>
-                      <span class="glyphicon glyphicon-ok f_addOpp inline" id="addOpp"></span>
+                      <span class="glyphicon glyphicon-ok inline f_addRow"></span>
                       </td>
                 </tr>
               </tbody>
             </table>
             </form>
-            <span class="label label-primary new-row-button" id="f_addNewRow">+</span>
-            <span id="test" class="label label-primary">test</span>
+            <span class="label label-primary new-row-button f_showFormRow">+</span>
           </div>
         </div>
       </div>
@@ -130,7 +129,7 @@
               </thead>
               <tbody>
                 <tr class="editable">
-                  <td class="editableField">AEG</td>
+                  <td class="editableField">Client 3</td>
                   <td class="editableField">Peter, Maureen</td>
                   <td class="editableField">01/01/16</td>
                   <td class="editableField">Opportunity XYZ</td>
@@ -140,16 +139,16 @@
                     <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td>
                 </tr>
                 <tr class="editable">
-                  <td class="editableField">AT&amp;T</td>
+                  <td class="editableField">Client 4</td>
                   <td class="editableField">Reyes, Peter</td>
                   <td class="editableField">07/15/16</td>
-                  <td class="editableField">Agent Answer Center ROI</td>
+                  <td class="editableField">Project ROI</td>
                   <td class="editableField">Proposal Submitted</span></td>
                   <td class="rowControl">
                     <span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span>
                     <span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td>
                 </tr>
-                <tr class="editable" id="newAcctsForm">
+                <tr class="editable formRow" id="newAcctsForm">
                   <td>
                       <input type="text" id="newAccount" placeholder="Account" class="form-control oppForm"/>
                       </td><td>
@@ -166,13 +165,13 @@
                         <option>Won</option>
                         <option>Lost</option>
                       </select>
-                      <span class="glyphicon glyphicon-ok inline" id="f_dormAcctAdd"></span>
+                      <span class="glyphicon glyphicon-ok inline f_addRow"></span>
                       </td>
                 </tr>
               </tbody>
             </table>
             </form>
-            <span class="label label-default new-row-button" id="f_addNewAcctRow">+</span>
+            <span class="label label-default new-row-button f_showFormRow">+</span>
           </div>
         </div>
       </div>

@@ -1,17 +1,19 @@
 
-var addRow = function () {
-  $('tr.formRow').find('input').map(function() {
+var addRow = function (id) {
+  var addHTML = '<tr class="editable">';
+  $('tr#' + id).find('input').map(function() {
     var arr = [];
     arr.push($(this).val());
-    console.log(arr);
-    // <tr class="editable"><td class="editableField">' + accountText + '</td><td class="editableField">' + bdLeadsText + '</td><td class="editableField">' + lastContact + '</td><td class="editableField">' + oppNameText + '</td><td class="editableField"><span class="label label-default">' + statusText + '</span></td><td class="rowControl"><span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span><span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td></tr>';
+    addHTML += '<td class="editableField">' + $(this).val() + '</td>';
   });
+  addHTML += '<td class="editable">' + $('tr.formRow').find('select').val() + '</td>';
+  addHTML += '<td class="rowControl"><span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span><span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td>';
+  addHTML += '</tr>'
+  $('#' + id).before(addHTML);
+  $('tr.formRow').hide();
 };
 
 $(document).ready(function() {
-
-  // Testing
-  $('#test').on('click', addRow);
 
   // Make table sortable
   // Helper to make table not lose width
@@ -31,57 +33,13 @@ $(document).ready(function() {
   $('#dormAcctsForm').hide();
   $('#newAcctsForm').hide();
 
-  //Show new Opportunity form/row
-  $('#f_addNewRow').on('click', function() {
-      $('tr#dormAcctsForm').toggle();
+  //Show new form/row
+  $('span.f_showFormRow').on('click', function() {
+      $(this).siblings('form').find('tr.formRow').toggle();
   });
 
-  $('#f_addNewAcctRow').on('click', function() {
-      $('tr#newAcctsForm').toggle();
-  });
-
-  // Add new opporuntity row (dormant accounts)
-  $('#addOpp').on('click', function() {
-    // Grab form values and create HTML
-    var accountText = $('#account').val();
-    var bdLeadsText = $('#bdLeads').val();
-    var lastContact = $('#lastContact').val();
-    var oppNameText = $('#opportunity').val();
-    var statusText = $('#status').val();
-    var newOppHTML = '<tr class="editable"><td class="editableField">' + accountText + '</td><td class="editableField">' + bdLeadsText + '</td><td class="editableField">' + lastContact + '</td><td class="editableField">' + oppNameText + '</td><td class="editableField"><span class="label label-default">' + statusText + '</span></td><td class="rowControl"><span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span><span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td></tr>';
-
-    //Add new table row to table before the
-    $('#formRow').before(newOppHTML);
-
-    //Clear and hide form
-    $('#account').val('');
-    $('#bdLeads').val('');
-    $('#lastContact').val('');
-    $('#opportunity').val('');
-    $('#status').val('');
-    $('#formRow').hide();
-  });
-
-  // Add new opporuntity row (new target accounts)
-  $('#f_dormAcctAdd').on('click', function() {
-    // Grab form values and create HTML
-    var accountText = $('#newAccount').val();
-    var bdLeadsText = $('#newBdLeads').val();
-    var lastContact = $('#newLastContact').val();
-    var oppNameText = $('#newOpportunity').val();
-    var statusText = $('#newStatus').val();
-    var newOppHTML = '<tr class="editable"><td class="editableField">' + accountText + '</td><td class="editableField">' + bdLeadsText + '</td><td class="editableField">' + lastContact + '</td><td class="editableField">' + oppNameText + '</td><td class="editableField"><span class="label label-default">' + statusText + '</span></td><td class="rowControl"><span class="glyphicon glyphicon-trash glyphicon-fade f_deleteRow"></span><span class="glyphicon glyphicon-pencil glyphicon-fade f_editRow"></span></td></tr>';
-
-    //Add new table row to table before the
-    $('#newAcctsForm').before(newOppHTML);
-
-    //Clear and hide form
-    $('#newAccount').val('');
-    $('#newBdLeads').val('');
-    $('#newLastContact').val('');
-    $('#newOpportunity').val('');
-    $('#newStatus').val('');
-    $('#newAcctsForm').hide();
+  $('span.f_addRow').on('click', function() {
+    addRow($(this).parents('tr').attr('id'));
   });
 
   // Change transparency of trash glyph
