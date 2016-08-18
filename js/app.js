@@ -1,3 +1,5 @@
+var app = angular.module('nhApp', []);
+
 
 var addRow = function () {
   $('tr.formRow').find('input').map(function() {
